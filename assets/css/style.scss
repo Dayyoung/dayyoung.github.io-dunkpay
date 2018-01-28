@@ -1,0 +1,35 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+    background-position: center center;
+    background-image: url("../img/header-bg.jpg");
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.project-name {  
+    margin: 0 auto;  
+    width:290px;
+    height:65px;
+    background-size : 100%;
+    background-image: url("../img/dunkpay-title.png");
+    background-repeat: no-repeat;
+    color:#00ff0000;
+}
+
+.project-tagline {
+    opacity:1;    
+}
+
+.main-content {
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: normal;
+        color: #222;
+    }
+}
