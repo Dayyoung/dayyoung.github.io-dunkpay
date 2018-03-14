@@ -103,9 +103,9 @@ Initialize `new dunkpay('testnet')` for testing.
 
 Cryptocurrency | Support 
 ------------ | -------------
-BTC | TESTNET
-BCH | NOT SUPPORTED
-ETH | ROPSTEN
+BTC | TESTNET [(https://test-insight.bitpay.com)](https://test-insight.bitpay.com)
+BCH | TESTNET [(https://tbch.blockdozer.com)](https://tbch.blockdozer.com)
+ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 
 # TESTING
  [/docs/test.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkblog/master/docs/test.html)

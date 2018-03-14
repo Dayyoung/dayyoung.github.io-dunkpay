@@ -29,7 +29,7 @@ Dunkpay.prototype.shot = function(callback)
 
   delete this.address
 
-  var PREFIX = "https://www.dunkpay.com/"
+  var PREFIX = "https://www.bitcoinyo.com/"
   
   if(this.mode == "testnet")
     PREFIX = "http://test.bitcoinyo.com/"
