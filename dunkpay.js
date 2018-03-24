@@ -19,10 +19,10 @@ Dunkpay.prototype.shot = function(callback)
   {
     this.callback = callback
   }
-  for (var k in this){
-      if (this.hasOwnProperty(k)) {
-           console.log(k + " : " + this[k]);
-      }
+  // for (var k in this){
+  //     if (this.hasOwnProperty(k)) {
+  //          console.log(k + " : " + this[k]);
+  //     }
   }
 
   this.ownerAddress = this.address // migration.
