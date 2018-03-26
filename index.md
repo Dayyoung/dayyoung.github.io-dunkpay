@@ -117,7 +117,7 @@ Initialize `new dunkpay('testnet')` for testing.
 
 Cryptocurrency | Support 
 ------------ | -------------
-BTC | TESTNET [(https://test-insight.bitpay.com)](https://tbtc.blockdozer.com)
+BTC | TESTNET [(https://tbtc.blockdozer.com)](https://tbtc.blockdozer.com)
 BCH | TESTNET [(https://tbch.blockdozer.com)](https://tbch.blockdozer.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 
