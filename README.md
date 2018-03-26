@@ -86,6 +86,9 @@ dunkpay.shot(function(err,result){
 **escrow**
 - `escrow` - An option to enable your escrow payment. It completes when your buyer confirms a transaction. 
 
+**escrowMail**
+- `escrowMail` - escrowMail is the email address of the buyer in the escrow payment. If you do not enter this option, you will be prompted for your purchase. 
+
 **itemName**
 - `itemName` - It will be described on your product. It supports UTF-8 encoded character.
 
@@ -98,12 +101,23 @@ dunkpay.shot(function(err,result){
 **notificationUrl**
 - `notificationUrl` - It is place where your server can receive request when your transaction is completed. Whole query string will be return. 
 
+**customLogo**
+- `customLogo` - It is a customized logo. Allow external image URL. 
+
+**customColor**
+- `customColor` - It is a customized color for invoice design. Allow Hex color code. 
+
+**customUrl**
+- `customUrl` - It is the URL that will be moved when the logo is clicked. 
+
+
+
 # TESTNET
 Initialize `new dunkpay('testnet')` for testing.
 
 Cryptocurrency | Support 
 ------------ | -------------
-BTC | TESTNET [(https://test-insight.bitpay.com)](https://test-insight.bitpay.com)
+BTC | TESTNET [(https://test-insight.bitpay.com)](https://tbtc.blockdozer.com)
 BCH | TESTNET [(https://tbch.blockdozer.com)](https://tbch.blockdozer.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 

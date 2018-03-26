@@ -67,8 +67,7 @@ function jsonToQueryString(json) {
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event) {
-  //alert(event.data);
-  //..do something..
+  
   if(Context.callback)
   {
   try {
