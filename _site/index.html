@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=d832d89ca1feea69c476d1b55cc3f598ad7ede77">
+    <link rel="stylesheet" href="/assets/css/style.css?v=de9c6b3877721fcfebcfa61e709324a5a91022d4">
   </head>
   <body>
     <section class="page-header">
@@ -127,6 +127,11 @@ Transactions are guaranteed by blockchain method.</p>
   <li><code class="highlighter-rouge">escrow</code> - An option to enable your escrow payment. It completes when your buyer confirms a transaction.</li>
 </ul>
 
+<p><strong>escrowMail</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">escrowMail</code> - escrowMail is the email address of the buyer in the escrow payment. If you do not enter this option, you will be prompted for your purchase.</li>
+</ul>
+
 <p><strong>itemName</strong></p>
 <ul>
   <li><code class="highlighter-rouge">itemName</code> - It will be described on your product. It supports UTF-8 encoded character.</li>
@@ -147,6 +152,21 @@ Transactions are guaranteed by blockchain method.</p>
   <li><code class="highlighter-rouge">notificationUrl</code> - It is place where your server can receive request when your transaction is completed. Whole query string will be return.</li>
 </ul>
 
+<p><strong>customLogo</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">customLogo</code> - It is a customized logo. Allow external image URL.</li>
+</ul>
+
+<p><strong>customColor</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">customColor</code> - It is a customized color for invoice design. Allow Hex color code.</li>
+</ul>
+
+<p><strong>customUrl</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">customUrl</code> - It is the URL that will be moved when the logo is clicked.</li>
+</ul>
+
 <h1 id="testnet">TESTNET</h1>
 <p>Initialize <code class="highlighter-rouge">new dunkpay('testnet')</code> for testing.</p>
 
@@ -160,7 +180,7 @@ Transactions are guaranteed by blockchain method.</p>
   <tbody>
     <tr>
       <td>BTC</td>
-      <td>TESTNET <a href="https://test-insight.bitpay.com">(https://test-insight.bitpay.com)</a></td>
+      <td>TESTNET <a href="https://tbtc.blockdozer.com">(https://tbtc.blockdozer.com)</a></td>
     </tr>
     <tr>
       <td>BCH</td>
@@ -174,7 +194,9 @@ Transactions are guaranteed by blockchain method.</p>
 </table>
 
 <h1 id="testing">TESTING</h1>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkblog/master/docs/test.html">/docs/test.html</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html">/docs/test.html</a></p>
+
+<p><a href="mailto:dryudryu@gmail.com">Contact me with any questions : dryudryu@gmail.com</a></p>
 
 <h1 id="license">LICENSE</h1>
 <p><a href="https://www.mozilla.org/MPL/2.0/">MPL-2.0</a></p>

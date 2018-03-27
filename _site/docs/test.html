@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>DunkPay.com</title>
-	<!--<script type="text/javascript" src="https://raw.githubusercontent.com/Dayyoung/dunkblog/master/dunkpay.js"></script> -->	
-	<script type="text/javascript" src="../dunkpay.js"></script>
+
+	<script type="text/javascript" src="https://www.dunkpay.com/dunkpay.js"></script>
 
 	<script type="text/javascript">
 		
@@ -60,30 +60,44 @@
 	</script>
 </head>
 
+<style type="text/css">
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin : 5px;
+    width : 300px;
+}	
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+</style>
+
 <body>
 	<br>
-	DunkPay.com - Javascript library for cryptocurrency payment.
-	<br>
-	<br>
-	For Livenet
-	<br>
-	<br>
-	<button onclick="sell()">Sell</button>
-	<br>
-	<button onclick="sellInDollars()">For sell ​​in dollars</button>
-	<br>
-	<button onclick="sellWithEscrow()">Sell with escrow</button>
+	<h3>DunkPay.com - Click the button for testing.</h3>
+	<h3>For Livenet</h3>
+	<br> Basic selling : <br>
+	<button class="button button1" onclick="sell()">Bitcoin</button>
+	<br> Selling with Dollars : <br> 
+	<button class="button button2" onclick="sellInDollars()">Bitcoin cash</button>
+	<br> Selling with escrow : <br>
+	<button class="button button3" onclick="sellWithEscrow()">Ethereum</button>
 
 	<br>
 	<br>
-	For Testnet
-	<br>
-	<br>
-	<button onclick="sell('testnet')">Sell</button>
-	<br>
-	<button onclick="sellInDollars('testnet')">For sell ​​in dollars</button>
-	<br>
-	<button onclick="sellWithEscrow('testnet')">Sell with escrow</button>
+	<h3>For Testnet</h3>
+	<br> Basic selling : <br>
+	<button class="button button1" onclick="sell('testnet')">Bitcoin</button>
+	<br> Selling with Dollars : <br>
+	<button class="button button2" onclick="sellInDollars('testnet')">Bitcoin cash</button>
+	<br> Selling with escrow : <br>
+	<button class="button button3" onclick="sellWithEscrow('testnet')">Ethereum</button>
 
 </body>
 

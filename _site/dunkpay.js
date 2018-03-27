@@ -19,11 +19,6 @@ Dunkpay.prototype.shot = function(callback)
   {
     this.callback = callback
   }
-  // for (var k in this){
-  //     if (this.hasOwnProperty(k)) {
-  //          console.log(k + " : " + this[k]);
-  //     }
-  }
 
   this.ownerAddress = this.address // migration.
 
@@ -34,10 +29,31 @@ Dunkpay.prototype.shot = function(callback)
   if(this.mode == "testnet")
     PREFIX = "http://test.bitcoinyo.com/"
 
+  if(!this.customLogo)
+  {
+    this.customLogo = getLogo(this.type)
+  }
+
   delete this.mode
 
   window.open(PREFIX+this.type+jsonToQueryString(this), "BitcoinYo", "width=500, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );    
 
+}
+
+function getLogo(type)
+{
+    switch(type) {
+        case 'BTC':             
+            var logoUrl = "https://www.dunkpay.com/img/dunkpay-bitcoin.png"
+            break;
+        case 'BCH':        
+            var logoUrl = "https://www.dunkpay.com/img/dunkpay-bitcoincash.png"
+            break;
+        case 'ETH':        
+            var logoUrl = "https://www.dunkpay.com/img/dunkpay-ethereum.png"
+            break;
+    }
+    return logoUrl;
 }
 
 function jsonToQueryString(json) {
@@ -51,8 +67,7 @@ function jsonToQueryString(json) {
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event) {
-  //alert(event.data);
-  //..do something..
+  
   if(Context.callback)
   {
   try {
