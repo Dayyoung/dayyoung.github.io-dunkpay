@@ -121,9 +121,9 @@ BCH | TESTNET [(https://tbch.blockdozer.com)](https://tbch.blockdozer.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 
 # TESTING
- [/docs/test.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html)
+ [Click here for testing : /docs/test.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html)
 
- [Contact me with any questions : dryudryu@gmail.com](mailto:dryudryu@gmail.com)
+ [Click here for contacting : dryudryu@gmail.com](mailto:dryudryu@gmail.com)
 
 # LICENSE
 [MPL-2.0](https://www.mozilla.org/MPL/2.0/)
