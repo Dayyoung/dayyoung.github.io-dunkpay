@@ -3,6 +3,6 @@ description: Javascript library for cryptocurrency payment.
 google_analytics: 
 theme: jekyll-theme-cayman
 repository: 'Dayyoung/dunkpay'
-show_downloads : false
 github:
-  repository_url: https://github.com/Dayyoung/dunkpay
+repository_url: https://github.com/Dayyoung/dunkpay
+show_downloads: true

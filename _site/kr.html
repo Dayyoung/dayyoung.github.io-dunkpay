@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="ko">
   <head>
     <meta charset="UTF-8">
 
@@ -9,11 +9,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Javascript library for cryptocurrency payment." />
 <meta property="og:description" content="Javascript library for cryptocurrency payment." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/kr.html" />
+<meta property="og:url" content="http://localhost:4000/kr.html" />
 <meta property="og:site_name" content="DunkPay.com" />
 <script type="application/ld+json">
-{"name":"DunkPay.com","description":"Javascript library for cryptocurrency payment.","author":null,"@type":"WebSite","url":"http://localhost:4000/","publisher":null,"image":null,"headline":"DunkPay.com","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+{"name":null,"description":"Javascript library for cryptocurrency payment.","author":null,"@type":"WebPage","url":"http://localhost:4000/kr.html","publisher":null,"image":null,"headline":"DunkPay.com","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,13 +24,13 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">DunkPay.com</h1>
-      <h2 class="project-tagline">Javascript library for cryptocurrency payment.</h2>
+      <h2 class="project-tagline">암호화폐 결제를 위한 자바스크립트 라이브러리</h2>
       <!--  -->
         <!-- <a href="http://github.com/Dayyoung/dunkpay" class="btn">View on GitHub</a> -->
       
       
-        <a href="https://github.com/Dayyoung/dunkpay" class="btn">View on GitHub</a>
-        <a href="/token" class="btn">DunkPay Token</a>
+        <a href="https://github.com/Dayyoung/dunkpay" class="btn">깃허브 보기</a>
+        <a href="/token" class="btn">DunkPay 토큰</a>
         <!--  <a href="http://github.com/Dayyoung/dunkpay/zipball/gh-pages" class="btn">WHITE PAPER</a> -->
         <!-- <a href="http://github.com/Dayyoung/dunkpay/tarball/gh-pages" class="btn">Download .tar.gz</a> -->
       
@@ -39,22 +39,22 @@
     <section class="main-content">
       <h1 id="dunkpaycom">DunkPay.com</h1>
 
-<p>DunkPay.com is the service for users who want to pay with cryptocurrency.
-Create a link, copy it and sell what you want.
-As soon as transaction is completed, confirmation process starts immediately
-Transactions are guaranteed by blockchain method.</p>
+<p>DunkPay.com은 암호화폐로 상품판매를 원하는 사용자를 위한 서비스입니다.
+단순히 링크를 만들고, 판매하시면 됩니다.
+구매자가 암호화폐를 입금하면 즉시 확인할 수 있습니다.
+거래내용은 블록체인에서 보장해 줍니다.</p>
 
-<p>“Play ball. Make your dream.”</p>
+<p>“플레이 볼! 꿈을 이루세요.”</p>
 
 <h1 id="installation">INSTALLATION</h1>
-<p>Include script on your site.</p>
+<p>당신의 웹사이트에 <스크립트>를 참조하세요.</스크립트></p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://www.dunkpay.com/dunkpay.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div></div>
 
 <h1 id="usage">USAGE</h1>
 
-<p>For sell ​​with bitcoin</p>
+<p>비트코인을 이용한 판매 예</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
 <span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BTC"</span>
@@ -66,7 +66,7 @@ Transactions are guaranteed by blockchain method.</p>
 
 <h1 id="advance-usage">ADVANCE USAGE</h1>
 
-<p>For sell ​​in dollars</p>
+<p>비트코인 캐시를 이용한 달러통화 판매 예</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
 <span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BCH"</span>
@@ -85,7 +85,7 @@ Transactions are guaranteed by blockchain method.</p>
 <span class="p">})</span>
 </code></pre></div></div>
 
-<p>For sell with escrow</p>
+<p>이더리움을 이용한 에스크로 판매 예</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
 <span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"ETH"</span>
@@ -106,73 +106,74 @@ Transactions are guaranteed by blockchain method.</p>
 
 <h1 id="option">OPTION</h1>
 
-<p><strong>type (Required*)</strong></p>
+<p><strong>type (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">type</code> - The type of cryptocurrency. We support BTC/BCH/ETH.</li>
+  <li><code class="highlighter-rouge">type</code> - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH 를 지원합니다.</li>
 </ul>
 
-<p><strong>address (Required*)</strong></p>
+<p><strong>address (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">address</code> - Owned by you. When the coin is deposited, it will be sent to this address.</li>
+  <li><code class="highlighter-rouge">address</code> - 소유하고 계신 지갑주소 입니다. 비트코인 송금이 될 예정입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.</li>
 </ul>
 
-<p><strong>amount (Required*)</strong></p>
+<p><strong>amount (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">amount</code> - Price that you want to get. The default unit of amount is BTC/BCH/ETH.</li>
+  <li><code class="highlighter-rouge">amount</code> - 판매를 원하는 화폐의 단위를 설정합니다. 현재 BTC/BCH/ETH 단위를 지원합니다.</li>
 </ul>
 
 <p><strong>currency</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">currency</code> - The unit of currency that you want to sell price. <a href="https://blockchain.info/api/exchange_rates_api">For support currency see.</a></li>
+  <li><code class="highlighter-rouge">currency</code> - 판매를 원하는 화폐의 종류를 설정합니다. <a href="https://blockchain.info/api/exchange_rates_api">지원화폐 보기.</a></li>
 </ul>
 
 <p><strong>escrow</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">escrow</code> - An option to enable your escrow payment. It completes when your buyer confirms a transaction.</li>
+  <li><code class="highlighter-rouge">escrow</code> - 에스크로를 활성화 하는 옵션입니다. 구매자의 최종승인 후 거래가 완료됩니다.</li>
 </ul>
 
 <p><strong>escrowMail</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">escrowMail</code> - escrowMail is the email address of the buyer in the escrow payment. If you do not enter this option, you will be prompted for your purchase.</li>
+  <li><code class="highlighter-rouge">escrowMail</code> - 에스크로 결제를 원하는 구매자의 이메일 주소입니다. 옵션을 입력하지 않을 경우 구매 시 물어보게 됩니다.</li>
 </ul>
 
 <p><strong>itemName</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">itemName</code> - It will be described on your product. It supports UTF-8 encoded character.</li>
+  <li><code class="highlighter-rouge">itemName</code> - itemName 인보이스(송장)에 표시되는 상품명 입니다. UTF-8로 인코딩된 텍스트를 입력해 주세요.</li>
 </ul>
 
 <p><strong>invoiceMail</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">invoiceMail</code> - InvoiceMail will send it to you when your transaction is completed. If you cannot receive any mail , please check you spam mailbox.</li>
+  <li><code class="highlighter-rouge">invoiceMail</code> -  거래가 완료되면 알림메일이 전송될 주소입니다. 이메일을 받지못했다면 스팸메일함을 확인해 주세요.</li>
 </ul>
 
 <p><strong>redirectUrl</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">redirectUrl</code> - It is url destination to move page when your transaction is completed.</li>
+  <li><code class="highlighter-rouge">redirectUrl</code> - 거래가 완료되면 바로 이동되는 URL 목적지입니다. 초기에 전달된 모든 쿼리값도 반환합니다.</li>
 </ul>
 
 <p><strong>notificationUrl</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">notificationUrl</code> - It is place where your server can receive request when your transaction is completed. Whole query string will be return.</li>
+  <li><code class="highlighter-rouge">notificationUrl</code> - 거래가 완료되면 사용자 서버에서 푸시를 받을 수 있는 주소입니다. 초기에 전달된 모든 쿼리값도 반환합니다.</li>
 </ul>
 
 <p><strong>customLogo</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">customLogo</code> - It is a customized logo. Allow external image URL.</li>
+  <li><code class="highlighter-rouge">customLogo</code> - 사용자정의 로고입니다. 외부이미지 링크를 허용합니다.</li>
 </ul>
 
 <p><strong>customColor</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">customColor</code> - It is a customized color for invoice design. Allow Hex color code.</li>
+  <li><code class="highlighter-rouge">customColor</code> - 인보이스화면을 위한 사용자정의 색상입니다. Hex컬러값을 허용합니다.</li>
 </ul>
 
 <p><strong>customUrl</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">customUrl</code> - It is the URL that will be moved when the logo is clicked.</li>
+  <li><code class="highlighter-rouge">customUrl</code> - 로고 클릭 시 이동하는 홈페이지 주소 입니다.</li>
 </ul>
 
 <h1 id="testnet">TESTNET</h1>
-<p>Initialize <code class="highlighter-rouge">new dunkpay('testnet')</code> for testing.</p>
+<p><code class="highlighter-rouge">new dunkpay('testnet')</code>로 초기화하면 테스트 모드로 작동합니다.
+아래표는 지원하는 테스트서버 입니다.</p>
 
 <table>
   <thead>
@@ -198,9 +199,9 @@ Transactions are guaranteed by blockchain method.</p>
 </table>
 
 <h1 id="testing">TESTING</h1>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html">Click here for testing : /docs/test.html</a></p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html">테스트 페이지 : /docs/test.html</a></p>
 
-<p><a href="mailto:dryudryu@gmail.com">Click here for contacting : dryudryu@gmail.com</a></p>
+<p><a href="mailto:dryudryu@gmail.com">개발자 문의 : dryudryu@gmail.com</a></p>
 
 <h1 id="license">LICENSE</h1>
 <p><a href="https://www.mozilla.org/MPL/2.0/">MPL-2.0</a></p>
