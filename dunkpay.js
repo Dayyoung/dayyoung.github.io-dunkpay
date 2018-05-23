@@ -28,7 +28,7 @@ Dunkpay.prototype.shot = function(callback)
 
   var PREFIX = "https://www.dunkpay.com/"
 
-  var popup = window.open(PREFIX+this.type+jsonToQueryString(this), "BitcoinYo", "width=500, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );    
+  var popup = window.open(PREFIX+this.type+jsonToQueryString(this), "DunkPay.com", "width=500, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );    
 
   popup.focus()
 }

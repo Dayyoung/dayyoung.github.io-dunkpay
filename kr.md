@@ -126,6 +126,9 @@ alert(link)
 **getLink()**
 - `getLink()` - 구매용 바로가기 주소를 생성합니다. 
 
+**destinationTag**
+- `destinationTag` - 목적지태그를 입력합니다. (리플전용)
+
 **selfClose**
 - `selfClose` - 구매 완료 후 팝업이 스스로 닫힙니다. 
 

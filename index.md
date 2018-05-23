@@ -122,6 +122,9 @@ alert(link)
 **getLink()**
 - `getLink()` - Create a shortcut link for selling.
 
+**destinationTag**
+- `destinationTag` - It is the field for destination tag. (Ripple only)
+
 **selfClose**
 - `selfClose` - After the transaction is completed, the pop-up closes itself. 
 
