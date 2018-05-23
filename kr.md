@@ -80,7 +80,8 @@ dunkpay.shot(function(err,result){
 var dunkpay = new Dunkpay()
 dunkpay.type = "XRP"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "rPTTVD6uHjZ1daPGSFg4Bfgksfd3sjQ45k"
+dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
+dunkpay.destinationTag = "1017911454"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
