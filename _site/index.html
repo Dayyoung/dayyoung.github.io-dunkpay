@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1e130c">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=702e6ff4f1217c9219775f5e8598f58191e83dc5">
+    <link rel="stylesheet" href="/assets/css/style.css?v=28e800a18b7c4970a399d9abe160e8d12d050b48">
   </head>
   <body>
     <section class="page-header">
@@ -49,66 +49,79 @@ Transactions are guaranteed by blockchain method.</p>
 <h1 id="installation">INSTALLATION</h1>
 <p>Include script on your site.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://www.dunkpay.com/dunkpay.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript" src="https://www.dunkpay.com/dunkpay.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
 
 <h1 id="usage">USAGE</h1>
 
 <p>For sell ​​with bitcoin</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BTC"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"1Lc1jhXdsB7t1XpTdNbrchnxKQide9tMia"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mf">0.001</span> 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "BTC"
+dunkpay.address = "1Lc1jhXdsB7t1XpTdNbrchnxKQide9tMia"
+dunkpay.amount = 0.001 // 0.001 BTC
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">()</span>
+dunkpay.shot()
 </code></pre></div></div>
 
 <h1 id="advance-usage">ADVANCE USAGE</h1>
 
 <p>For sell ​​in dollars</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BCH"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"19zgnCTYzq1eww1JpGCi5ZSvFPiCC7fVHa"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">itemName</span> <span class="o">=</span> <span class="s2">"Bascketball🏀"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">currency</span> <span class="o">=</span> <span class="s2">"USD"</span> 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">// 2dollars</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">invoiceMail</span> <span class="o">=</span> <span class="s2">"dunkpay.com@gmail.com"</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "BCH"
+dunkpay.address = "19zgnCTYzq1eww1JpGCi5ZSvFPiCC7fVHa"
+dunkpay.itemName = "Bascketball🏀"
+dunkpay.currency = "USD" 
+dunkpay.amount = 2 // 2dollars
+dunkpay.invoiceMail = "dunkpay.com@gmail.com"
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">result</span><span class="p">){</span>
- <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
- <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something was wrong."</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
- <span class="p">}</span> 
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Payment was success."</span> <span class="o">+</span> <span class="nx">result</span><span class="p">)</span>		
-<span class="p">})</span>
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)		
+})
 </code></pre></div></div>
 
-<p>For sell with escrow</p>
+<p>For sell with customize option</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"ETH"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">itemName</span> <span class="o">=</span> <span class="s2">"겔럭시9"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">// 10000원  </span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">currency</span> <span class="o">=</span> <span class="s2">"KRW"</span> 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">escrow</span> <span class="o">=</span> <span class="kc">true</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "ETH"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
+dunkpay.itemName = "겔럭시9"
+dunkpay.amount = 0.1 // 0.1 ETH  
+dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+dunkpay.customColor="FF0000" // RED
+dunkpay.selfClose = true
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">result</span><span class="p">){</span>
- <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
- <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something was wrong."</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
- <span class="p">}</span> 
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Payment was success."</span> <span class="o">+</span> <span class="nx">result</span><span class="p">)</span>			
-<span class="p">})</span>
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+</code></pre></div></div>
+
+<p>Get url link for sell</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "🧚🧚🧚🧚🧚"
+dunkpay.address = "rPTTVD6uHjZ1daPGSFg4Bfgksfd3sjQ45k"
+dunkpay.amount = 0.01 // 0.01 XRP  
+
+var link = dunkpay.getLink()
+alert(link)
 </code></pre></div></div>
 
 <h1 id="option">OPTION</h1>
 
 <p><strong>type (Required*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">type</code> - The type of cryptocurrency. We support BTC/BCH/ETH.</li>
+  <li><code class="highlighter-rouge">type</code> - The type of cryptocurrency. We support BTC/BCH/ETH/XRP.</li>
 </ul>
 
 <p><strong>address (Required*)</strong></p>
@@ -124,16 +137,6 @@ Transactions are guaranteed by blockchain method.</p>
 <p><strong>currency</strong></p>
 <ul>
   <li><code class="highlighter-rouge">currency</code> - The unit of currency that you want to sell price. <a href="https://blockchain.info/api/exchange_rates_api">For support currency see.</a></li>
-</ul>
-
-<p><strong>escrow</strong></p>
-<ul>
-  <li><code class="highlighter-rouge">escrow</code> - An option to enable your escrow payment. It completes when your buyer confirms a transaction.</li>
-</ul>
-
-<p><strong>escrowMail</strong></p>
-<ul>
-  <li><code class="highlighter-rouge">escrowMail</code> - escrowMail is the email address of the buyer in the escrow payment. If you do not enter this option, you will be prompted for your purchase.</li>
 </ul>
 
 <p><strong>itemName</strong></p>
@@ -171,6 +174,16 @@ Transactions are guaranteed by blockchain method.</p>
   <li><code class="highlighter-rouge">customUrl</code> - It is the URL that will be moved when the logo is clicked.</li>
 </ul>
 
+<p><strong>getLink()</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">getLink()</code> - Create a shortcut link for selling.</li>
+</ul>
+
+<p><strong>selfClose</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">selfClose</code> - After the transaction is completed, the pop-up closes itself.</li>
+</ul>
+
 <h1 id="testnet">TESTNET</h1>
 <p>Initialize <code class="highlighter-rouge">new dunkpay('testnet')</code> for testing.</p>
 
@@ -184,21 +197,25 @@ Transactions are guaranteed by blockchain method.</p>
   <tbody>
     <tr>
       <td>BTC</td>
-      <td>TESTNET <a href="https://tbtc.blockdozer.com">(https://tbtc.blockdozer.com)</a></td>
+      <td>TESTNET <a href="https://test-insight.bitpay.com">(https://test-insight.bitpay.com)</a></td>
     </tr>
     <tr>
       <td>BCH</td>
-      <td>TESTNET <a href="https://tbch.blockdozer.com">(https://tbch.blockdozer.com)</a></td>
+      <td>TESTNET <a href="https://test-bch-insight.bitpay.com">(https://test-bch-insight.bitpay.com)</a></td>
     </tr>
     <tr>
       <td>ETH</td>
       <td>ROPSTEN <a href="https://ropsten.etherscan.io">(https://ropsten.etherscan.io)</a></td>
     </tr>
+    <tr>
+      <td>XRP</td>
+      <td>TESTNET <a href="https://ripple.com/build/xrp-test-net">(https://ripple.com/build/xrp-test-net)</a></td>
+    </tr>
   </tbody>
 </table>
 
 <h1 id="testing">TESTING</h1>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html">Click here for testing : /docs/test.html</a></p>
+<p><a href="/docs/test.html">Click here for testing : /docs/test.html</a></p>
 
 <p><a href="mailto:dryudryu@gmail.com">Click here for contacting : dryudryu@gmail.com</a></p>
 

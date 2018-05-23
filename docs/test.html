@@ -3,7 +3,7 @@
 <head>
 	<title>DunkPay.com</title>
 
-	<script type="text/javascript" src="https://www.dunkpay.com/dunkpay.js"></script>
+	<script type="text/javascript" src="/dunkpay.js"></script>
 
 	<script type="text/javascript">
 		
@@ -16,9 +16,10 @@
 			dunkpay.shot(function(err,result){
 				 if(err)
 				 {
-				  console.log("Something was wrong." + err)
+				  alert("Something is wrong." + err)
+				  return
 				 } 
-				 console.log("Payment was success." + result.transactionId)				
+				 alert("Payment is success." + result.transactionId)				
 			})
 		}
 
@@ -34,27 +35,42 @@
 			dunkpay.shot(function(err,result){
 				 if(err)
 				 {
-				  console.log("Something was wrong." + err)
+				  alert("Something is wrong." + err)
+				  return
 				 } 
-				 console.log("Payment was success." + result.transactionId)				
+				 alert("Payment is success." + result.transactionId)				
 			})
 		}
 
 		function sellWithEscrow(mode) {
-			var dunkpay = new Dunkpay(mode)
+			var dunkpay = new Dunkpay()
 			dunkpay.type = "ETH"
 			dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
-			dunkpay.amount = 10000  
-			dunkpay.currency = "KRW" 
-			dunkpay.escrow = true
+			dunkpay.itemName = "겔럭시9"
+			dunkpay.amount = 0.1 // 0.1 ETH  
+			dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+			dunkpay.customColor = "ffa54f"
+			dunkpay.customUrl = "https://google.com"
+			dunkpay.selfClose = true
 
 			dunkpay.shot(function(err,result){
-				 if(err)
-				 {
-				  console.log("Something was wrong." + err)
-				 } 
-				 console.log("Payment was success." + result.transactionId)
+			 if(err)
+			 {
+			  alert("Something is wrong." + err)
+			 } 
+			 alert("Payment is success." + result)			
 			})
+		}
+
+		function sellWithXRP(mode) {
+			var dunkpay = new Dunkpay()
+			dunkpay.type = "XRP"
+			dunkpay.itemName = "🧚🧚🧚🧚🧚"
+			dunkpay.address = "rPTTVD6uHjZ1daPGSFg4Bfgksfd3sjQ45k"
+			dunkpay.amount = 0.01 // 0.01 XRP  
+
+			var link = dunkpay.getLink()
+			alert(link)
 		}
 
 	</script>
@@ -76,6 +92,7 @@
 .button1 {background-color: #4CAF50;} /* Green */
 .button2 {background-color: #008CBA;} /* Blue */
 .button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #4CAF50;} /* Green */
 </style>
 
 <body>
@@ -88,6 +105,8 @@
 	<button class="button button2" onclick="sellInDollars()">Bitcoin cash</button>
 	<br> Selling with escrow : <br>
 	<button class="button button3" onclick="sellWithEscrow()">Ethereum</button>
+	<br> Selling with XRP : <br>
+	<button class="button button4" onclick="sellWithXRP()">Ripple</button>
 
 	<br>
 	<br>
@@ -98,6 +117,8 @@
 	<button class="button button2" onclick="sellInDollars('testnet')">Bitcoin cash</button>
 	<br> Selling with escrow : <br>
 	<button class="button button3" onclick="sellWithEscrow('testnet')">Ethereum</button>
+	<br> Selling with escrow : <br>
+	<button class="button button4" onclick="sellWithXRP('testnet')">Ripple</button>
 
 </body>
 

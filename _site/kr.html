@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1e130c">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=702e6ff4f1217c9219775f5e8598f58191e83dc5">
+    <link rel="stylesheet" href="/assets/css/style.css?v=28e800a18b7c4970a399d9abe160e8d12d050b48">
   </head>
   <body>
     <section class="page-header">
@@ -49,66 +49,79 @@
 <h1 id="installation">INSTALLATION</h1>
 <p>당신의 웹사이트에 <스크립트>를 참조하세요.</스크립트></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://www.dunkpay.com/dunkpay.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript" src="https://www.dunkpay.com/dunkpay.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
 
 <h1 id="usage">USAGE</h1>
 
 <p>비트코인을 이용한 판매 예</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BTC"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"1Lc1jhXdsB7t1XpTdNbrchnxKQide9tMia"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mf">0.001</span> 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "BTC"
+dunkpay.address = "1Lc1jhXdsB7t1XpTdNbrchnxKQide9tMia"
+dunkpay.amount = 0.001 // 0.001 BTC
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">()</span>
+dunkpay.shot()
 </code></pre></div></div>
 
 <h1 id="advance-usage">ADVANCE USAGE</h1>
 
 <p>비트코인 캐시를 이용한 달러통화 판매 예</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"BCH"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"19zgnCTYzq1eww1JpGCi5ZSvFPiCC7fVHa"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">itemName</span> <span class="o">=</span> <span class="s2">"Bascketball🏀"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">currency</span> <span class="o">=</span> <span class="s2">"USD"</span> 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">// 2dollars</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">invoiceMail</span> <span class="o">=</span> <span class="s2">"dunkpay.com@gmail.com"</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "BCH"
+dunkpay.address = "19zgnCTYzq1eww1JpGCi5ZSvFPiCC7fVHa"
+dunkpay.itemName = "Bascketball🏀"
+dunkpay.currency = "USD" 
+dunkpay.amount = 2 // 2dollars
+dunkpay.invoiceMail = "dunkpay.com@gmail.com"
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">result</span><span class="p">){</span>
- <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
- <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something was wrong."</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
- <span class="p">}</span> 
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Payment was success."</span> <span class="o">+</span> <span class="nx">result</span><span class="p">)</span>		
-<span class="p">})</span>
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)		
+})
 </code></pre></div></div>
 
-<p>이더리움을 이용한 에스크로 판매 예</p>
+<p>이더리움을 이용한 사용자정의 판매 예</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dunkpay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dunkpay</span><span class="p">()</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"ETH"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s2">"0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">itemName</span> <span class="o">=</span> <span class="s2">"겔럭시9"</span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">// 10000원  </span>
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">currency</span> <span class="o">=</span> <span class="s2">"KRW"</span> 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">escrow</span> <span class="o">=</span> <span class="kc">true</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "ETH"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
+dunkpay.itemName = "겔럭시9"
+dunkpay.amount = 0.1 // 0.1 ETH  
+dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+dunkpay.customColor="FF0000" // RED
+dunkpay.selfClose = true
 
-<span class="nx">dunkpay</span><span class="p">.</span><span class="nx">shot</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="nx">result</span><span class="p">){</span>
- <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
- <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Something was wrong."</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
- <span class="p">}</span> 
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Payment was success."</span> <span class="o">+</span> <span class="nx">result</span><span class="p">)</span>			
-<span class="p">})</span>
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+</code></pre></div></div>
+
+<p>리플을 이용한 판매링크 생성 예</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "🧚🧚🧚🧚🧚"
+dunkpay.address = "rPTTVD6uHjZ1daPGSFg4Bfgksfd3sjQ45k"
+dunkpay.amount = 0.01 // 0.01 XRP  
+
+var link = dunkpay.getLink()
+alert(link)
 </code></pre></div></div>
 
 <h1 id="option">OPTION</h1>
 
 <p><strong>type (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">type</code> - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH 를 지원합니다.</li>
+  <li><code class="highlighter-rouge">type</code> - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP 를 지원합니다.</li>
 </ul>
 
 <p><strong>address (필수값*)</strong></p>
@@ -124,16 +137,6 @@
 <p><strong>currency</strong></p>
 <ul>
   <li><code class="highlighter-rouge">currency</code> - 판매를 원하는 화폐의 종류를 설정합니다. <a href="https://blockchain.info/api/exchange_rates_api">지원화폐 보기.</a></li>
-</ul>
-
-<p><strong>escrow</strong></p>
-<ul>
-  <li><code class="highlighter-rouge">escrow</code> - 에스크로를 활성화 하는 옵션입니다. 구매자의 최종승인 후 거래가 완료됩니다.</li>
-</ul>
-
-<p><strong>escrowMail</strong></p>
-<ul>
-  <li><code class="highlighter-rouge">escrowMail</code> - 에스크로 결제를 원하는 구매자의 이메일 주소입니다. 옵션을 입력하지 않을 경우 구매 시 물어보게 됩니다.</li>
 </ul>
 
 <p><strong>itemName</strong></p>
@@ -171,6 +174,16 @@
   <li><code class="highlighter-rouge">customUrl</code> - 로고 클릭 시 이동하는 홈페이지 주소 입니다.</li>
 </ul>
 
+<p><strong>getLink()</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">getLink()</code> - 구매용 바로가기 주소를 생성합니다.</li>
+</ul>
+
+<p><strong>selfClose</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">selfClose</code> - 구매 완료 후 팝업이 스스로 닫힙니다.</li>
+</ul>
+
 <h1 id="testnet">TESTNET</h1>
 <p><code class="highlighter-rouge">new dunkpay('testnet')</code>로 초기화하면 테스트 모드로 작동합니다.
 아래표는 지원하는 테스트서버 입니다.</p>
@@ -185,21 +198,25 @@
   <tbody>
     <tr>
       <td>BTC</td>
-      <td>TESTNET <a href="https://tbtc.blockdozer.com">(https://tbtc.blockdozer.com)</a></td>
+      <td>TESTNET <a href="https://test-insight.bitpay.com">(https://test-insight.bitpay.com)</a></td>
     </tr>
     <tr>
       <td>BCH</td>
-      <td>TESTNET <a href="https://tbch.blockdozer.com">(https://tbch.blockdozer.com)</a></td>
+      <td>TESTNET <a href="https://test-bch-insight.bitpay.com">(https://test-bch-insight.bitpay.com)</a></td>
     </tr>
     <tr>
       <td>ETH</td>
       <td>ROPSTEN <a href="https://ropsten.etherscan.io">(https://ropsten.etherscan.io)</a></td>
     </tr>
+    <tr>
+      <td>XRP</td>
+      <td>TESTNET <a href="https://ripple.com/build/xrp-test-net">(https://ripple.com/build/xrp-test-net)</a></td>
+    </tr>
   </tbody>
 </table>
 
 <h1 id="testing">TESTING</h1>
-<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html">테스트 페이지 : /docs/test.html</a></p>
+<p><a href="/docs/test.html">테스트 페이지 : /docs/test.html</a></p>
 
 <p><a href="mailto:dryudryu@gmail.com">개발자 문의 : dryudryu@gmail.com</a></p>
 

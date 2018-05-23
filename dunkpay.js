@@ -6,11 +6,17 @@
  Dual licensed under the MIT or GPL Version 2 licenses.
  Visit https://www.DunkPay.com/license 
  */
-var Context;
+
+var PREFIX = "https://www.dunkpay.com/"
+var CONTEXT;
 
 var Dunkpay = function (mode) {
+  
+  if(!mode)
+    mode = "livenet"
+
   this.mode = mode
-  Context = this
+  CONTEXT = this
 }
 
 Dunkpay.prototype.shot = function(callback)
@@ -20,40 +26,16 @@ Dunkpay.prototype.shot = function(callback)
     this.callback = callback
   }
 
-  this.ownerAddress = this.address // migration.
+  var PREFIX = "https://www.dunkpay.com/"
 
-  delete this.address
+  var popup = window.open(PREFIX+this.type+jsonToQueryString(this), "BitcoinYo", "width=500, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );    
 
-  var PREFIX = "https://www.bitcoinyo.com/"
-  
-  if(this.mode == "testnet")
-    PREFIX = "http://test.bitcoinyo.com/"
-
-  if(!this.customLogo)
-  {
-    this.customLogo = getLogo(this.type)
-  }
-
-  delete this.mode
-
-  window.open(PREFIX+this.type+jsonToQueryString(this), "BitcoinYo", "width=500, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );    
-
+  popup.focus()
 }
 
-function getLogo(type)
-{
-    switch(type) {
-        case 'BTC':             
-            var logoUrl = "https://www.dunkpay.com/img/dunkpay-bitcoin.png"
-            break;
-        case 'BCH':        
-            var logoUrl = "https://www.dunkpay.com/img/dunkpay-bitcoincash.png"
-            break;
-        case 'ETH':        
-            var logoUrl = "https://www.dunkpay.com/img/dunkpay-ethereum.png"
-            break;
-    }
-    return logoUrl;
+Dunkpay.prototype.getLink = function()
+{ 
+  return PREFIX+this.type+jsonToQueryString(this)
 }
 
 function jsonToQueryString(json) {
@@ -67,15 +49,13 @@ function jsonToQueryString(json) {
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event) {
-  
-  if(Context.callback)
-  {
-  try {
+try {
     var jsonData = JSON.parse(event.data)
-    Context.callback(undefined , jsonData)     
+    if(jsonData.transactionId)
+    {
+      CONTEXT.callback(undefined , jsonData)
     }
-    catch(err) {      
-    Context.callback(err , undefined)     
-    }
+  }
+  catch(err) {          
   }
 }

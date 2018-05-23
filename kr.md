@@ -14,7 +14,7 @@ DunkPay.com은 암호화폐로 상품판매를 원하는 사용자를 위한 서
 # INSTALLATION
 당신의 웹사이트에 <스크립트>를 참조하세요.
 
-```javascript
+```
 <script type="text/javascript" src="https://www.dunkpay.com/dunkpay.js"></script>
 ```
 
@@ -22,11 +22,11 @@ DunkPay.com은 암호화폐로 상품판매를 원하는 사용자를 위한 서
 
 비트코인을 이용한 판매 예
 
-```javascript
+```
 var dunkpay = new Dunkpay()
 dunkpay.type = "BTC"
 dunkpay.address = "1Lc1jhXdsB7t1XpTdNbrchnxKQide9tMia"
-dunkpay.amount = 0.001 
+dunkpay.amount = 0.001 // 0.001 BTC
 
 dunkpay.shot()
 ```
@@ -35,7 +35,7 @@ dunkpay.shot()
 
 비트코인 캐시를 이용한 달러통화 판매 예
 
-```javascript
+```
 var dunkpay = new Dunkpay()
 dunkpay.type = "BCH"
 dunkpay.address = "19zgnCTYzq1eww1JpGCi5ZSvFPiCC7fVHa"
@@ -47,36 +47,50 @@ dunkpay.invoiceMail = "dunkpay.com@gmail.com"
 dunkpay.shot(function(err,result){
  if(err)
  {
-  console.log("Something was wrong." + err)
+  alert("Something is wrong." + err)
  } 
- console.log("Payment was success." + result)		
+ alert("Payment is success." + result)		
 })
 ```
 
-이더리움을 이용한 에스크로 판매 예
+이더리움을 이용한 사용자정의 판매 예
 
-```javascript
+```
 var dunkpay = new Dunkpay()
 dunkpay.type = "ETH"
 dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
 dunkpay.itemName = "겔럭시9"
-dunkpay.amount = 10000 // 10000원  
-dunkpay.currency = "KRW" 
-dunkpay.escrow = true
+dunkpay.amount = 0.1 // 0.1 ETH  
+dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+dunkpay.customColor="FF0000" // RED
+dunkpay.selfClose = true
 
 dunkpay.shot(function(err,result){
  if(err)
  {
-  console.log("Something was wrong." + err)
+  alert("Something is wrong." + err)
  } 
- console.log("Payment was success." + result)			
+ alert("Payment is success." + result)			
 })
+```
+
+리플을 이용한 판매링크 생성 예
+
+```
+var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "🧚🧚🧚🧚🧚"
+dunkpay.address = "rPTTVD6uHjZ1daPGSFg4Bfgksfd3sjQ45k"
+dunkpay.amount = 0.01 // 0.01 XRP  
+
+var link = dunkpay.getLink()
+alert(link)
 ```
 
 # OPTION
 
 **type (필수값*)**
-- `type` - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH 를 지원합니다.  
+- `type` - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP 를 지원합니다.  
 
 **address (필수값*)**
 - `address` - 소유하고 계신 지갑주소 입니다. 비트코인 송금이 될 예정입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.
@@ -86,12 +100,6 @@ dunkpay.shot(function(err,result){
 
 **currency**
 - `currency` - 판매를 원하는 화폐의 종류를 설정합니다. [지원화폐 보기.](https://blockchain.info/api/exchange_rates_api)
-
-**escrow**
-- `escrow` - 에스크로를 활성화 하는 옵션입니다. 구매자의 최종승인 후 거래가 완료됩니다.  
-
-**escrowMail**
-- `escrowMail` - 에스크로 결제를 원하는 구매자의 이메일 주소입니다. 옵션을 입력하지 않을 경우 구매 시 물어보게 됩니다. 
 
 **itemName**
 - `itemName` - itemName 인보이스(송장)에 표시되는 상품명 입니다. UTF-8로 인코딩된 텍스트를 입력해 주세요.
@@ -114,6 +122,12 @@ dunkpay.shot(function(err,result){
 **customUrl**
 - `customUrl` - 로고 클릭 시 이동하는 홈페이지 주소 입니다. 
 
+**getLink()**
+- `getLink()` - 구매용 바로가기 주소를 생성합니다. 
+
+**selfClose**
+- `selfClose` - 구매 완료 후 팝업이 스스로 닫힙니다. 
+
 
 # TESTNET
 `new dunkpay('testnet')`로 초기화하면 테스트 모드로 작동합니다.
@@ -121,12 +135,13 @@ dunkpay.shot(function(err,result){
 
 Cryptocurrency | Support 
 ------------ | -------------
-BTC | TESTNET [(https://tbtc.blockdozer.com)](https://tbtc.blockdozer.com)
-BCH | TESTNET [(https://tbch.blockdozer.com)](https://tbch.blockdozer.com)
+BTC | TESTNET [(https://test-insight.bitpay.com)](https://test-insight.bitpay.com)
+BCH | TESTNET [(https://test-bch-insight.bitpay.com)](https://test-bch-insight.bitpay.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
+XRP | TESTNET [(https://ripple.com/build/xrp-test-net)](https://ripple.com/build/xrp-test-net)
 
 # TESTING
- [테스트 페이지 : /docs/test.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Dayyoung/dunkpay/master/docs/test.html)
+ [테스트 페이지 : /docs/test.html](/docs/test.html)
 
  [개발자 문의 : dryudryu@gmail.com](mailto:dryudryu@gmail.com)
 
