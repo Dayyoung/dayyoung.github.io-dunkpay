@@ -16,7 +16,7 @@ Include script on your site.
 
 # USAGE
 
-For sell ​​with bitcoin
+For sell ​​with bitcoin (BTC)
 
 ```
 var dunkpay = new Dunkpay()
@@ -29,7 +29,7 @@ dunkpay.shot()
 
 # ADVANCE USAGE
 
-For sell ​​in dollars
+For sell ​​in dollars (BCH)
 
 ```
 var dunkpay = new Dunkpay()
@@ -49,7 +49,7 @@ dunkpay.shot(function(err,result){
 })
 ```
 
-For sell with customize option
+For sell with customize options (ETH)
 
 ```
 var dunkpay = new Dunkpay()
@@ -59,6 +59,26 @@ dunkpay.itemName = "겔럭시9"
 dunkpay.amount = 0.1 // 0.1 ETH  
 dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
 dunkpay.customColor="FF0000" // RED
+dunkpay.customUrl = "https://google.com"
+
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+```
+
+For sell with destination Tag (XRP)
+
+```
+var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "R.I.P"
+dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
+dunkpay.amount = 0.01 // 0.01 XRP  
+dunkpay.destinationTag = "1017911454"
 dunkpay.selfClose = true
 
 dunkpay.shot(function(err,result){
@@ -70,14 +90,13 @@ dunkpay.shot(function(err,result){
 })
 ```
 
-Get url link for sell
+Get shortcut link for sell (DNK)
 
 ```
 var dunkpay = new Dunkpay()
-dunkpay.type = "XRP"
+dunkpay.type = "DNK"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
-dunkpay.destinationTag = "1017911454"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
@@ -87,13 +106,13 @@ alert(link)
 # OPTION
 
 **type (Required*)**
-- `type` - The type of cryptocurrency. We support BTC/BCH/ETH/XRP. 
+- `type` - The type of cryptocurrency. We support BTC/BCH/ETH/XRP/DNK. 
 
 **address (Required*)**
 - `address` - Owned by you. When the coin is deposited, it will be sent to this address. 
 
 **amount (Required*)**
-- `amount` - Price that you want to get. The default unit of amount is BTC/BCH/ETH. 
+- `amount` - Price that you want to get. The default unit of amount is BTC/BCH/ETH/XRP/DNK. 
 
 **currency**
 - `currency` - The unit of currency that you want to sell price. [For support currency see.](https://blockchain.info/api/exchange_rates_api)
@@ -122,6 +141,9 @@ alert(link)
 **getLink()**
 - `getLink()` - Create a shortcut link for selling.
 
+**destinationTag**
+- `destinationTag` - It is the field for destination tag. (Ripple only)
+
 **selfClose**
 - `selfClose` - After the transaction is completed, the pop-up closes itself. 
 
@@ -135,6 +157,7 @@ BTC | TESTNET [(https://test-insight.bitpay.com)](https://test-insight.bitpay.co
 BCH | TESTNET [(https://test-bch-insight.bitpay.com)](https://test-bch-insight.bitpay.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 XRP | TESTNET [(https://ripple.com/build/xrp-test-net)](https://ripple.com/build/xrp-test-net)
+DNK | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 
 # TESTING
  [Click here for testing : /docs/test.html](/docs/test.html)

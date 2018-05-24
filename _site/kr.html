@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1e130c">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=28e800a18b7c4970a399d9abe160e8d12d050b48">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1522bfd5d0f8a79fafa35466d40dc38786899cb0">
   </head>
   <body>
     <section class="page-header">
@@ -54,7 +54,7 @@
 
 <h1 id="usage">USAGE</h1>
 
-<p>비트코인을 이용한 판매 예</p>
+<p>비트코인(BTC)을 이용한 판매 예</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "BTC"
@@ -66,7 +66,7 @@ dunkpay.shot()
 
 <h1 id="advance-usage">ADVANCE USAGE</h1>
 
-<p>비트코인 캐시를 이용한 달러통화 판매 예</p>
+<p>비트코인 캐시(BCH)를 이용한 달러통화 판매 예</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "BCH"
@@ -85,7 +85,7 @@ dunkpay.shot(function(err,result){
 })
 </code></pre></div></div>
 
-<p>이더리움을 이용한 사용자정의 판매 예</p>
+<p>이더리움(ETH)을 이용한 사용자정의 판매 예</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "ETH"
@@ -94,6 +94,25 @@ dunkpay.itemName = "겔럭시9"
 dunkpay.amount = 0.1 // 0.1 ETH  
 dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
 dunkpay.customColor="FF0000" // RED
+dunkpay.customUrl = "https://google.com"
+
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+</code></pre></div></div>
+
+<p>리플(XRP)을 이용한 목적지태그 생성 예</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "R.I.P"
+dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
+dunkpay.amount = 0.01 // 0.01 XRP  
+dunkpay.destinationTag = "1017911454"
 dunkpay.selfClose = true
 
 dunkpay.shot(function(err,result){
@@ -105,13 +124,12 @@ dunkpay.shot(function(err,result){
 })
 </code></pre></div></div>
 
-<p>리플을 이용한 판매링크 생성 예</p>
+<p>덩크페이(DNK)을 이용한 판매링크 생성 예</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
-dunkpay.type = "XRP"
+dunkpay.type = "DNK"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
-dunkpay.destinationTag = "1017911454"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
@@ -122,17 +140,17 @@ alert(link)
 
 <p><strong>type (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">type</code> - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP 를 지원합니다.</li>
+  <li><code class="highlighter-rouge">type</code> - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP/DNK 를 지원합니다.</li>
 </ul>
 
 <p><strong>address (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">address</code> - 소유하고 계신 지갑주소 입니다. 비트코인 송금이 될 예정입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.</li>
+  <li><code class="highlighter-rouge">address</code> - 소유하고 계신 지갑주소 입니다. 암호화폐가 송금되는 주소입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.</li>
 </ul>
 
 <p><strong>amount (필수값*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">amount</code> - 판매를 원하는 화폐의 단위를 설정합니다. 현재 BTC/BCH/ETH 단위를 지원합니다.</li>
+  <li><code class="highlighter-rouge">amount</code> - 판매를 원하는 화폐의 단위를 설정합니다. 현재 BTC/BCH/ETH/XRP/DNK 단위를 지원합니다.</li>
 </ul>
 
 <p><strong>currency</strong></p>
@@ -180,6 +198,11 @@ alert(link)
   <li><code class="highlighter-rouge">getLink()</code> - 구매용 바로가기 주소를 생성합니다.</li>
 </ul>
 
+<p><strong>destinationTag</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">destinationTag</code> - 목적지태그를 입력합니다. (리플전용)</li>
+</ul>
+
 <p><strong>selfClose</strong></p>
 <ul>
   <li><code class="highlighter-rouge">selfClose</code> - 구매 완료 후 팝업이 스스로 닫힙니다.</li>
@@ -212,6 +235,10 @@ alert(link)
     <tr>
       <td>XRP</td>
       <td>TESTNET <a href="https://ripple.com/build/xrp-test-net">(https://ripple.com/build/xrp-test-net)</a></td>
+    </tr>
+    <tr>
+      <td>DNK</td>
+      <td>ROPSTEN <a href="https://ropsten.etherscan.io">(https://ropsten.etherscan.io)</a></td>
     </tr>
   </tbody>
 </table>

@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#1e130c">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=28e800a18b7c4970a399d9abe160e8d12d050b48">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1522bfd5d0f8a79fafa35466d40dc38786899cb0">
   </head>
   <body>
     <section class="page-header">
@@ -54,7 +54,7 @@ Transactions are guaranteed by blockchain method.</p>
 
 <h1 id="usage">USAGE</h1>
 
-<p>For sell ​​with bitcoin</p>
+<p>For sell ​​with bitcoin (BTC)</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "BTC"
@@ -66,7 +66,7 @@ dunkpay.shot()
 
 <h1 id="advance-usage">ADVANCE USAGE</h1>
 
-<p>For sell ​​in dollars</p>
+<p>For sell ​​in dollars (BCH)</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "BCH"
@@ -85,7 +85,7 @@ dunkpay.shot(function(err,result){
 })
 </code></pre></div></div>
 
-<p>For sell with customize option</p>
+<p>For sell with customize options (ETH)</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
 dunkpay.type = "ETH"
@@ -94,6 +94,25 @@ dunkpay.itemName = "겔럭시9"
 dunkpay.amount = 0.1 // 0.1 ETH  
 dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
 dunkpay.customColor="FF0000" // RED
+dunkpay.customUrl = "https://google.com"
+
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+</code></pre></div></div>
+
+<p>For sell with destination Tag (XRP)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "R.I.P"
+dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
+dunkpay.amount = 0.01 // 0.01 XRP  
+dunkpay.destinationTag = "1017911454"
 dunkpay.selfClose = true
 
 dunkpay.shot(function(err,result){
@@ -105,13 +124,12 @@ dunkpay.shot(function(err,result){
 })
 </code></pre></div></div>
 
-<p>Get url link for sell</p>
+<p>Get shortcut link for sell (DNK)</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var dunkpay = new Dunkpay()
-dunkpay.type = "XRP"
+dunkpay.type = "DNK"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
-dunkpay.destinationTag = "1017911454"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
@@ -122,7 +140,7 @@ alert(link)
 
 <p><strong>type (Required*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">type</code> - The type of cryptocurrency. We support BTC/BCH/ETH/XRP.</li>
+  <li><code class="highlighter-rouge">type</code> - The type of cryptocurrency. We support BTC/BCH/ETH/XRP/DNK.</li>
 </ul>
 
 <p><strong>address (Required*)</strong></p>
@@ -132,7 +150,7 @@ alert(link)
 
 <p><strong>amount (Required*)</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">amount</code> - Price that you want to get. The default unit of amount is BTC/BCH/ETH.</li>
+  <li><code class="highlighter-rouge">amount</code> - Price that you want to get. The default unit of amount is BTC/BCH/ETH/XRP/DNK.</li>
 </ul>
 
 <p><strong>currency</strong></p>
@@ -180,6 +198,11 @@ alert(link)
   <li><code class="highlighter-rouge">getLink()</code> - Create a shortcut link for selling.</li>
 </ul>
 
+<p><strong>destinationTag</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">destinationTag</code> - It is the field for destination tag. (Ripple only)</li>
+</ul>
+
 <p><strong>selfClose</strong></p>
 <ul>
   <li><code class="highlighter-rouge">selfClose</code> - After the transaction is completed, the pop-up closes itself.</li>
@@ -211,6 +234,10 @@ alert(link)
     <tr>
       <td>XRP</td>
       <td>TESTNET <a href="https://ripple.com/build/xrp-test-net">(https://ripple.com/build/xrp-test-net)</a></td>
+    </tr>
+    <tr>
+      <td>DNK</td>
+      <td>ROPSTEN <a href="https://ropsten.etherscan.io">(https://ropsten.etherscan.io)</a></td>
     </tr>
   </tbody>
 </table>

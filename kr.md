@@ -20,7 +20,7 @@ DunkPay.com은 암호화폐로 상품판매를 원하는 사용자를 위한 서
 
 # USAGE
 
-비트코인을 이용한 판매 예
+비트코인(BTC)을 이용한 판매 예
 
 ```
 var dunkpay = new Dunkpay()
@@ -33,7 +33,7 @@ dunkpay.shot()
 
 # ADVANCE USAGE
 
-비트코인 캐시를 이용한 달러통화 판매 예
+비트코인 캐시(BCH)를 이용한 달러통화 판매 예
 
 ```
 var dunkpay = new Dunkpay()
@@ -53,7 +53,7 @@ dunkpay.shot(function(err,result){
 })
 ```
 
-이더리움을 이용한 사용자정의 판매 예
+이더리움(ETH)을 이용한 사용자정의 판매 예
 
 ```
 var dunkpay = new Dunkpay()
@@ -63,6 +63,26 @@ dunkpay.itemName = "겔럭시9"
 dunkpay.amount = 0.1 // 0.1 ETH  
 dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
 dunkpay.customColor="FF0000" // RED
+dunkpay.customUrl = "https://google.com"
+
+dunkpay.shot(function(err,result){
+ if(err)
+ {
+  alert("Something is wrong." + err)
+ } 
+ alert("Payment is success." + result)			
+})
+```
+
+리플(XRP)을 이용한 목적지태그 생성 예
+
+```
+var dunkpay = new Dunkpay()
+dunkpay.type = "XRP"
+dunkpay.itemName = "R.I.P"
+dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
+dunkpay.amount = 0.01 // 0.01 XRP  
+dunkpay.destinationTag = "1017911454"
 dunkpay.selfClose = true
 
 dunkpay.shot(function(err,result){
@@ -74,14 +94,13 @@ dunkpay.shot(function(err,result){
 })
 ```
 
-리플을 이용한 판매링크 생성 예
+덩크페이(DNK)을 이용한 판매링크 생성 예
 
 ```
 var dunkpay = new Dunkpay()
-dunkpay.type = "XRP"
+dunkpay.type = "DNK"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "rp2diYfVtpbgEMyaoWnuaWgFCAkqCAEg28"
-dunkpay.destinationTag = "1017911454"
+dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
@@ -91,13 +110,13 @@ alert(link)
 # OPTION
 
 **type (필수값*)**
-- `type` - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP 를 지원합니다.  
+- `type` - TYPE 암호화폐 종류를 선택합니다. 현재 BTC/BCH/ETH/XRP/DNK 를 지원합니다.  
 
 **address (필수값*)**
-- `address` - 소유하고 계신 지갑주소 입니다. 비트코인 송금이 될 예정입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.
+- `address` - 소유하고 계신 지갑주소 입니다. 암호화폐가 송금되는 주소입니다. 거래 진행중에는 변경할 수 없으니 유의하세요.
 
 **amount (필수값*)**
-- `amount` - 판매를 원하는 화폐의 단위를 설정합니다. 현재 BTC/BCH/ETH 단위를 지원합니다. 
+- `amount` - 판매를 원하는 화폐의 단위를 설정합니다. 현재 BTC/BCH/ETH/XRP/DNK 단위를 지원합니다. 
 
 **currency**
 - `currency` - 판매를 원하는 화폐의 종류를 설정합니다. [지원화폐 보기.](https://blockchain.info/api/exchange_rates_api)
@@ -143,6 +162,7 @@ BTC | TESTNET [(https://test-insight.bitpay.com)](https://test-insight.bitpay.co
 BCH | TESTNET [(https://test-bch-insight.bitpay.com)](https://test-bch-insight.bitpay.com)
 ETH | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 XRP | TESTNET [(https://ripple.com/build/xrp-test-net)](https://ripple.com/build/xrp-test-net)
+DNK | ROPSTEN [(https://ropsten.etherscan.io)](https://ropsten.etherscan.io)
 
 # TESTING
  [테스트 페이지 : /docs/test.html](/docs/test.html)
