@@ -54,7 +54,7 @@ For sell with customize options (ETH)
 ```
 var dunkpay = new Dunkpay()
 dunkpay.type = "ETH"
-dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
+dunkpay.address = "0xeB97444a0f0781890b8e7e317FCB0853a46880E6"
 dunkpay.itemName = "겔럭시9"
 dunkpay.amount = 0.1 // 0.1 ETH  
 dunkpay.customLogo = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
@@ -96,7 +96,7 @@ Get shortcut link for sell (DNK)
 var dunkpay = new Dunkpay()
 dunkpay.type = "DNK"
 dunkpay.itemName = "🧚🧚🧚🧚🧚"
-dunkpay.address = "0x41C87EDB6AB6C719456EACC992F4C2FE278FF8D4"
+dunkpay.address = "0xeB97444a0f0781890b8e7e317FCB0853a46880E6"
 dunkpay.amount = 0.01 // 0.01 XRP  
 
 var link = dunkpay.getLink()
